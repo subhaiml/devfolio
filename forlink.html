@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subharthi Dutta | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #111827; /* Dark background */
+      color: #f0f0f0;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+    .hero {
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 15px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+    }
+    button {
+      background-color: #ffcc00; /* New button color */
+      color: #111;
+    }
+    .typing-effect {
+      border-right: 3px solid #ffd700;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #ffd700; }
+    }
+    .skill-badge {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffcc00; /* Updated badge color */
+      padding: 10px 20px;
+      border-radius: 50px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .skill-badge:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 40px rgba(255, 204, 0, 0.5);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="flex flex-col items-center justify-center min-h-screen text-center hero">
+    <h1 class="text-5xl font-bold mb-4 text-white">Subharthi Dutta</h1>
+    <div class="typing-effect text-2xl font-medium text-yellow-300 mb-6">
+      Aspiring Software Development Engineer
+    </div>
+    <div class="flex gap-4">
+      <button class="py-2 px-6 rounded-full shadow-lg hover:bg-yellow-300 transition duration-300" onclick="window.location.href='#projects'">View My Work</button>
+      <button class="py-2 px-6 rounded-full shadow-lg hover:bg-yellow-300 transition duration-300" onclick="window.location.href='mailto:aryodutta2006@gmail.com'">Contact Me</button>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <section id="education" class="mb-8 glass p-6 fade-in">
+      <h2 class="text-3xl font-semibold text-yellow-300 mb-4">Education</h2>
+      <p class="text-lg">
+        <strong>B.Tech in Computer Science & Engineering (AI & ML)</strong><br />
+        University of Engineering & Management, New Town (2024 - 2028)<br />
+        Current CGPA: 8.0
+      </p>
+    </section>
+
+    <section id="skills" class="mb-8 glass p-6 fade-in">
+      <h2 class="text-3xl font-semibold text-yellow-300 mb-4">Technical Skills</h2>
+      <ul class="flex flex-wrap gap-4">
+        <li class="skill-badge">C</li>
+        <li class="skill-badge">Python</li>
+        <li class="skill-badge">Java</li>
+        <li class="skill-badge">JavaScript</li>
+        <li class="skill-badge">HTML & CSS</li>
+        <li class="skill-badge">Tailwind CSS</li>
+        <li class="skill-badge">React (learning)</li>
+        <li class="skill-badge">Node.js (learning)</li>
+        <li class="skill-badge">Git & GitHub</li>
+        <li class="skill-badge">VS Code</li>
+        <li class="skill-badge">Figma</li>
+        <li class="skill-badge">Responsive Design</li>
+        <li class="skill-badge">API Integration</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="mb-8 glass p-6 fade-in">
+      <h2 class="text-3xl font-semibold text-yellow-300 mb-4">Projects</h2>
+      <ul class="list-disc list-inside">
+        <li><strong>Personal AI-Generated Portfolio:</strong> Built with HTML, CSS, and JavaScript.</li>
+        <li><strong>IP Address Tracker:</strong> Developed using Tailwind CSS and JavaScript with REST API.</li>
+        <li><strong>Word & Character Detector:</strong> Created with a responsive UI.</li>
+        <li><strong>Concert Ticket Generator:</strong> A web app for generating styled digital tickets.</li>
+        <li><strong>Mood Detector Web App:</strong> Hackathon project using Face API.</li>
+      </ul>
+    </section>
+
+    <section id="extracurricular" class="mb-8 glass p-6 fade-in">
+      <h2 class="text-3xl font-semibold text-yellow-300 mb-4">Extra-Curricular Activities</h2>
+      <ul class="list-disc list-inside">
+        <li>Active participant in college hackathons and coding competitions.</li>
+        <li>Collaborate with teams on innovative software projects.</li>
+        <li>Engage in UI/UX design using Figma.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="text-center py-4">
+    <p class="text-gray-300">© 2025 Subharthi Dutta &mdash; Built with ❤️ and HTML, CSS & JavaScript</p>
+  </footer>
+
+  <script>
+    // Scroll fade-in animations for sections
+    const sections = document.querySelectorAll('.fade-in');
+    function checkVisibility() {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < triggerBottom){
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('load', checkVisibility);
+  </script>
+</body>
+</html>
